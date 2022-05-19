@@ -1,0 +1,15 @@
+.UI-text{
+    font-family: 'Roboto', sans-serif;
+}
+.UI-text_bold {
+    font-weight: bold;
+}
+.UI-text_size-s{
+    font-size: 15px;
+}
+.UI-text_size-m{
+    font-size: 20px;
+}
+.UI-text_size-l{
+    font-size: 25px;
+}

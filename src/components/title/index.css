@@ -1,0 +1,7 @@
+.titleTomato {
+    margin: 45px auto 20px 45px;
+    font-size: 40px;
+    height: 90px;
+    width: 200px;
+    text-shadow: 1px 1px 5px rgba(70, 29, 29, 0.5);
+}
