@@ -2,6 +2,7 @@ header {
     position: sticky;
     left: 0;
     top: 0;
+    height: 100px;
     background-color: rgba(0, 0, 0, 0.231);
     padding: 10px 15px 10px 15px;
     display: flex;

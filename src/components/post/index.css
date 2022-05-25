@@ -37,8 +37,7 @@ p {
 }
 
 .cross {
-    margin: 35px 40px 0 0 ;
-    font-size: 10px;
+
     position: absolute;
     right: 10px;
     top: 10px;
