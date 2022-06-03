@@ -1,5 +1,6 @@
 import React from "react";
 import './index.css';
+import Button from "../../ui/button";
 
 
 class Form extends React.Component {
@@ -14,8 +15,17 @@ class Form extends React.Component {
             highlighted: false,
         }
     }
-    handleSubmit = () => {
-        console.log(this.state)
+    onSubmit = () => {
+        const post = {
+            title: this.state.title,
+            description: this.state.description,
+            cover: this.state.cover,
+            links: {
+                apple: this.state.apple,
+                spotify: this.state.spotify},
+            highlighted: this.state.highlighted,
+        }
+        this.props.handleSubmit(post)
     }
     render() {
         return (
@@ -29,7 +39,7 @@ class Form extends React.Component {
                     <input id='formCheckbox' type="checkbox" value={this.state.highlighted} onChange={event => this.setState({highlighted: event.target.checked})}/>
                     <span> подсветить</span>
                 </label>
-            <button className="add-post" onClick={this.handleSubmit}>Add post</button>
+            <Button onClick={this.onSubmit} className="add-post" size="l" color="red">Add post</Button>
         </div>
         )  
     }

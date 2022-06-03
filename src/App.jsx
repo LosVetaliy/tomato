@@ -14,6 +14,9 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+    this.fetchData()
+  } 
+  fetchData = () => {
     fetch('http://localhost:3000/posts')
       .then(res => res.json())
       .then(data => this.setState({
@@ -21,7 +24,17 @@ class App extends React.Component {
           isLoading: false,
       }))
       .catch(error => console.error(error))
-  } 
+  }
+  handleSubmitForm = (post) => {
+    fetch('http://localhost:3000/posts', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(post)
+    })
+    .then(this.fetchData)
+  }
   render() {
     if (this.state.isLoading) {
       return (
@@ -31,8 +44,8 @@ class App extends React.Component {
     return (
       <>
         <Header/>
-        {this.state.posts.map(post => <Post post={post} numb={10} key={post.id} />)}
-        <Form/>
+        {this.state.posts.map(post => <Post post={post} key={post.id} />)}
+        <Form handleSubmit={this.handleSubmitForm}/>
       </>
     )
   }

@@ -1,8 +1,8 @@
 .UI-button_size-s {
-height: 20px;
-width: 20px;
-text-align: center;
-font-size: small;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-size: small;
 }
 .UI-button_size-m {
     height: 50px;
@@ -11,17 +11,17 @@ font-size: small;
     font-size: medium;
 }
 .UI-button_size-l {
-    height: 150px;
-    width: 300px;
+    height: 70px;
+    padding: 20px;
     text-align: center;
     font-size: large;
 }
-.UI-button_color-white {
-    background-color: white;
-    }
+.UI-button_color-grey {
+    background-color: rgb(163, 163, 163);
+}
 .UI-button_color-black {
     background-color: black;
-    }
+}
 .UI-button_color-red {
-    background-color: red;
-    }
+    background-color: rgba(255, 0, 0, 0.416);
+}
