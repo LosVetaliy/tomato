@@ -15,6 +15,16 @@ class Form extends React.Component {
             highlighted: false,
         }
     }
+    clearFields = () => {
+        this.setState({
+            title: '',
+            description: '',
+            cover: '',
+            apple: '',
+            spotify: '',
+            highlighted: false,
+        })
+    }
     onSubmit = () => {
         const post = {
             title: this.state.title,
@@ -26,6 +36,7 @@ class Form extends React.Component {
             highlighted: this.state.highlighted,
         }
         this.props.handleSubmit(post)
+        this.clearFields()
     }
     render() {
         return (

@@ -20,6 +20,9 @@ class Post extends React.Component {
         )
     }
     handleItemDelete = () => {
+        if (!window.confirm('u sure?')) {
+            return;
+          }
         fetch(`http://localhost:3000/posts/${this.props.post.id}`, {
             method: 'delete'
         })
