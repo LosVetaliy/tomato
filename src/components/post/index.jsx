@@ -3,19 +3,28 @@ import './index.css';
 import Text from "../../ui/text";
 import Button from "../../ui/button";
 
-const Post = (props) => {
-    return (
-        <div className='postWrapper'> 
-            <img src={props.post.cover} alt='cover' className='img'></img>
-            <Button className="cross" size="s" >X</Button>
+class Post extends React.Component {
+    render() {
+        const {post} = this.props
+        return (
+            <div className='postWrapper'> 
+            <img src={post.cover} alt='cover' className='img'></img>
+            <Button onClick={this.handleItemDelete} className="cross" size="s" >X</Button>
             <div className="textWrapper">
-                <Text bold size="m">{props.post.title}</Text>
-                <Text>{props.post.description}</Text>
-                <a href={props.post.links.spotify}>Spotify</a>
-                <a href={props.post.links.apple}>Apple Music</a>
+                <Text bold size="m">{post.title}</Text>
+                <Text>{post.description}</Text>
+                <a href={post.links.spotify}>Spotify</a>
+                <a href={post.links.apple}>Apple Music</a>
             </div>
         </div>
-    )
+        )
+    }
+    handleItemDelete = () => {
+        fetch(`http://localhost:3000/posts/${this.props.post.id}`, {
+            method: 'delete'
+        })
+        .then(this.props.refresh)
+    }
 }
 
 export default Post;

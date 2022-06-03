@@ -44,7 +44,7 @@ class App extends React.Component {
     return (
       <>
         <Header/>
-        {this.state.posts.map(post => <Post post={post} key={post.id} />)}
+        {this.state.posts.map(post => <Post post={post} key={post.id} refresh={this.fetchData}/>)}
         <Form handleSubmit={this.handleSubmitForm}/>
       </>
     )
