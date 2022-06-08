@@ -2,21 +2,22 @@ import React from "react";
 import './index.css';
 import Text from "../../ui/text";
 import Button from "../../ui/button";
+import cx from "classnames";
 
 class Post extends React.Component {
     render() {
         const {post} = this.props
         return (
-            <div className='postWrapper'> 
-            <img src={post.cover} alt='cover' className='img'></img>
-            <Button onClick={this.handleItemDelete} className="cross" size="s" >X</Button>
-            <div className="textWrapper">
-                <Text bold size="m">{post.title}</Text>
-                <Text>{post.description}</Text>
-                <a href={post.links.spotify}>Spotify</a>
-                <a href={post.links.apple}>Apple Music</a>
+            <div className={cx('postWrapper', post.highlighted && 'postHighlighted')}> 
+                <img src={post.cover} alt='cover' className='img'></img>
+                <Button onClick={this.handleItemDelete} className="cross" size="s" >X</Button>
+                <div className="textWrapper">
+                    <Text bold size="m">{post.title}</Text>
+                    <Text>{post.description}</Text>
+                    <a href={post.links.spotify}>Spotify</a>
+                    <a href={post.links.apple}>Apple Music</a>
+                </div>
             </div>
-        </div>
         )
     }
     handleItemDelete = () => {

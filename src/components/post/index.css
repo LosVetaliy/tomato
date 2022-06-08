@@ -37,7 +37,7 @@ p {
 }
 
 .cross {
-
+    margin: 35px 40px 0 0 ;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -55,4 +55,8 @@ a {
 .formWrapper {
     display: flex;
     flex-direction: column;
+}
+
+.postHighlighted {
+    background-color: rgba(93, 90, 156, 0.505);
 }
