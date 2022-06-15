@@ -51,3 +51,6 @@
     margin-right: auto;
     border-radius: 20px;
 }
+.error {
+    background-color: rgba(255, 84, 84, 0.501);
+}
