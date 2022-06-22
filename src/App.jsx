@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/header';
 import Post from './components/post';
 import Form from './components/form';
+import Modal from './components/modal';
+import Button from './ui/button';
 
 
 class App extends React.Component {
@@ -35,6 +37,14 @@ class App extends React.Component {
     })
     .then(this.fetchData)
   }
+  state = {
+    show: false
+  };
+  showModal = e => {
+    this.setState({
+      show: !this.state.show
+    });
+  };
   render() {
     if (this.state.isLoading) {
       return (
@@ -45,7 +55,13 @@ class App extends React.Component {
       <>
         <Header/>
         {this.state.posts.map(post => <Post post={post} key={post.id} refresh={this.fetchData}/>)}
-        <Form handleSubmit={this.handleSubmitForm}/>
+        <Button className="modalAddPost" size="m" color='gray'
+          onClick={e => {
+            this.showModal(e);}
+          }>
+          {" "}Open aditor{" "}
+        </Button>
+        <Modal onClose={this.showModal} show={this.state.show}>Show window</Modal>
       </>
     )
   }

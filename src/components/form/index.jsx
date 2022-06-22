@@ -73,7 +73,6 @@ class Form extends React.Component {
                 <textarea className={cx("formInput", this.state.errors.description && "error")} id="formText" placeholder="Текст поста" value={this.state.description} onChange={event => this.handleChangeField(event, 'description')}></textarea>
                 <input type="text" className={cx("formInput", this.state.errors.cover && "error")} id='formImg' placeholder="Ссылка на изображение" value={this.state.cover} onChange={event => this.handleChangeField(event, 'cover')}/>
                 <input type="text" className={cx("formInput", this.state.errors.spotify && "error")} id="formSpotify" placeholder="Ссылка Spotify" value={this.state.spotify} onChange={event => this.handleChangeField(event, 'spotify')}/>
-                <input type="text" className={cx("formInput", this.state.errors.apple && "error")} id="formApple" placeholder="Ссылка Apple" value={this.state.apple} onChange={event => this.handleChangeField(event, 'apple')}/>
                 <label className="checkboxCave" >
                     <input id='formCheckbox' type="checkbox" value={this.state.highlighted} onChange={event => this.setState({highlighted: event.target.checked})}/>
                     <span> подсветить</span>
